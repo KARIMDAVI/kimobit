@@ -123,3 +123,6 @@ blog/data/posts.en.json
 
 - If a post fails to open, verify the `file` path in `posts.en.json`.
 - Keep post `id` values unique — routing depends on them.
+
+
+2026 ☮︎ K!MOBit ☮︎ wired by hand, tested until it breaks.
