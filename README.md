@@ -1,4 +1,4 @@
-# K!MOBit Blog Module
+# K!MOBit Blog Module https://ka.budgo.net/blog/index.html
 
 This folder contains the standalone blog experience for the portfolio.
 
