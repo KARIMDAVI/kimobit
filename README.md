@@ -1,30 +1,62 @@
-# K!MOBit Blog Module https://ka.budgo.net/blog/index.html
+# 🖊️ K!MOBit — Blog Module
 
-This folder contains the standalone blog experience for the portfolio.
+[![Live Blog](https://img.shields.io/badge/🌐%20Live%20Blog-ka.budgo.net-4a90e2?style=for-the-badge)](https://ka.budgo.net/blog/index.html)
+[![Blog Status](https://img.shields.io/website?url=https%3A%2F%2Fka.budgo.net%2Fblog%2Findex.html&style=for-the-badge&label=Blog%20Status&up_color=brightgreen&down_color=red)](https://ka.budgo.net/blog/index.html)
+[![Grubhub Status](https://img.shields.io/website?url=https%3A%2F%2Fka.budgo.net%2F&style=for-the-badge&label=Grubhub%20Status&up_color=FF8000&down_color=red&logo=grubhub&logoColor=white)](https://ka.budgo.net/)
+[![Vanilla JS](https://img.shields.io/badge/Vanilla%20JS-SPA-yellow?style=for-the-badge&logo=javascript)](https://ka.budgo.net/blog/index.html)
 
-## Scope
+> A standalone blog experience for the portfolio — powered by vanilla JavaScript with hash-based routing, a built-in terminal, and lazy-loaded posts.
 
-This README is for the blog only.
+---
 
-- Entry page: `blog/index.html`
-- Styles: `blog/css/`
-- Data source: `blog/data/posts.en.json`
-- Client logic: `blog/js/`
-- Post content: `blog/posts/en/`
+## 📸 Preview
 
-## Architecture
+[![Blog Screenshot](https://image.thum.io/get/width/1200/crop/800/https://ka.budgo.net/blog/index.html)](https://ka.budgo.net/blog/index.html)
 
-The blog is a vanilla JavaScript hash-routed SPA.
+---
 
-- Routes are handled in `blog/js/router.js`.
-- Main page rendering and route handlers are in `blog/js/blog.js`.
-- Post HTML is lazy-loaded by `blog/js/post-loader.js`.
-- Filters and cards are handled by `blog/js/filters.js`.
-- Terminal commands are handled by `blog/js/terminal.js`.
+## 📋 Table of Contents
 
-## Run Locally
+- [Scope](#-scope)
+- [Architecture](#-architecture)
+- [Run Locally](#-run-locally)
+- [Add a New Blog Post](#-add-a-new-blog-post)
+- [Add a New Category](#-add-a-new-category)
+- [Notes](#-notes)
 
-Use any static server from the repository root.
+---
+
+## 🗂️ Scope
+
+This README covers the standalone blog module only.
+
+| File / Folder | Purpose |
+|---|---|
+| `blog/index.html` | Entry page |
+| `blog/css/` | Styles |
+| `blog/data/posts.en.json` | Post metadata |
+| `blog/js/` | Client-side logic |
+| `blog/posts/en/` | Post HTML content |
+
+---
+
+## 🏗️ Architecture
+
+The blog is a **vanilla JavaScript hash-routed SPA** — no build step required.
+
+| Module | Responsibility |
+|---|---|
+| `blog/js/router.js` | Hash-based routing |
+| `blog/js/blog.js` | Main rendering & route handlers |
+| `blog/js/post-loader.js` | Lazy-loads post HTML |
+| `blog/js/filters.js` | Filters & card rendering |
+| `blog/js/terminal.js` | Terminal command interface |
+
+---
+
+## 🚀 Run Locally
+
+Use any static server from the repository root:
 
 ```bash
 npx vite --port=4000
@@ -32,57 +64,63 @@ npx vite --port=4000
 
 Then open:
 
-- `http://localhost:4000/blog/`
+```
+http://localhost:4000/blog/
+```
 
-## Add a New Blog Post
+---
 
-1. Create the post HTML file:
+## ✍️ Add a New Blog Post
+
+**1.** Create the post HTML file:
 
 ```text
 blog/posts/en/<category>/<slug>.html
 ```
 
-2. Add metadata in:
+**2.** Add metadata in:
 
 ```text
 blog/data/posts.en.json
 ```
 
-3. Required metadata fields per post object:
+**3.** Required metadata fields:
 
-- `id` (unique slug)
-- `title`
-- `excerpt`
-- `date` (`YYYY-MM-DD`)
-- `category` (must match configured category names)
-- `tags` (array)
-- `difficulty`
-- `readTime`
-- `icon`
-- `file` (relative path to post HTML)
+| Field | Description |
+|---|---|
+| `id` | Unique slug (used for routing) |
+| `title` | Post title |
+| `excerpt` | Short description |
+| `date` | `YYYY-MM-DD` format |
+| `category` | Must match a configured category |
+| `tags` | Array of tag strings |
+| `difficulty` | Skill level indicator |
+| `readTime` | Estimated read time |
+| `icon` | Emoji or icon string |
+| `file` | Relative path to post HTML |
 
-4. Optional fields:
+**4.** Optional fields: `pinned`, `cost`, `materials`, `hardware`
 
-- `pinned`
-- `cost`
-- `materials`
-- `hardware`
+**5.** Verify in browser:
 
-5. Verify in browser:
+- ✅ Home cards
+- ✅ Browse filters
+- ✅ Category pages
+- ✅ Terminal `ls`, `search`, and `cat`
 
-- Home cards
-- Browse filters
-- Category pages
-- Terminal `ls`, `search`, and `cat`
+---
 
-## Add a New Category
+## 🗃️ Add a New Category
 
 1. Add the category to `CATEGORIES` in `blog/js/blog.js`.
-2. Use the exact same category name in post metadata.
+2. Use the **exact same** category name in post metadata.
 3. Add posts using that category.
 
-## Notes
+---
 
-- The blog expects JSON metadata and HTML post files to stay in sync.
-- If a post fails to open, check the `file` path in `posts.en.json`.
-- Keep post IDs unique; routing depends on `id` values.
+## 📝 Notes
+
+> ⚠️ The blog expects JSON metadata and HTML post files to stay in sync.
+
+- If a post fails to open, verify the `file` path in `posts.en.json`.
+- Keep post `id` values unique — routing depends on them.
