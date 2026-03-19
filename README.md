@@ -2,7 +2,7 @@
 
 [![Live Blog](https://img.shields.io/badge/🌐%20Live%20Blog-ka.budgo.net-4a90e2?style=for-the-badge)](https://ka.budgo.net/blog/index.html)
 [![Blog Status](https://img.shields.io/website?url=https%3A%2F%2Fka.budgo.net%2Fblog%2Findex.html&style=for-the-badge&label=Blog%20Status&up_color=brightgreen&down_color=red)](https://ka.budgo.net/blog/index.html)
-[![Vanilla JS](https://img.shields.io/badge/Vanilla%20JS-SPA-yellow?style=for-the-badge&logo=javascript)](https://ka.budgo.net/blog/index.html)
+[![Vanilla JS](https://img.shields.io/badge/Vanilla%20JS-SPA-yellow?style=for-the-badge&logo=javascript)](https://ka.budgo.net/blog/index.html](http://vanilla-js.com)
 
 > A standalone blog experience for the portfolio — powered by vanilla JavaScript with hash-based routing, a built-in terminal, and lazy-loaded posts.
 
